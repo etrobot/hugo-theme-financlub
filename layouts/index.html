@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="grid-container">
+    {{ $paginator := .Paginate ( .Site.RegularPages) }}
+    {{ range $paginator.Pages }}
+      {{ .Render "summary" }}
+    {{ end }}
+    </div>
+{{ if $paginator.HasPrev }}
+  <a href="{{ $paginator.Prev.URL }}">Previous</a>
+{{ end }}
+{{ if $paginator.HasNext }}
+  <a href="{{ $paginator.Next.URL }}">Next</a>
+{{ end }}
+{{ end }}

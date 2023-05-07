@@ -1,0 +1,18 @@
+<head>
+  <title>
+    {{ .Site.Title }}
+</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://unpkg.com/bulmaswatch/darkly/bulmaswatch.min.css">
+<title>{{ block "title" . }}
+  {{ .Site.Title }}
+  {{ end }}</title>
+  <style>
+      .grid-container {
+      justify-content: center;
+      display: grid;
+      grid-template-columns: 49% 49%;
+      grid-gap: 1rem;
+    }
+  </style>
+</head>

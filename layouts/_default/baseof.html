@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+
+{{ partial "head.html" . }}
+
+<body class="layout-documentation page-components">
+  {{ partial "navbar.html" . }}
+  <div class="container">
+  <section class="columns">
+    <main class="column">
+  {{ block "main" . }}
+  <!-- The part of the page that begins to differ between templates -->
+  {{ end }}
+</main>
+  {{ partial "sidebar.html" . }}
+  </section>
+  </div>
+  {{ partial "footer.html" . }}
+
+</body>
+
+</html>

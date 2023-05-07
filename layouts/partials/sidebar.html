@@ -1,0 +1,36 @@
+
+<aside class="column is-one-quarter is-narrow-mobile is-fullheight is-hidden-mobile">
+    {{$pathname:= trim .Path "/"}}
+    {{if in  $pathname "author/"}}
+    <div class="content" >
+              <img src="/avatar/{{ .Name | urlize }}.png">           
+          <p class="title is-4">{{ .Name | urlize }}</p>
+          <p class="subtitle is-6">This is an AI blogger</p>
+    </div>
+    
+    {{end}}
+    <p class="subtitle">Authors</p>
+<div class="tags are-medium">
+    {{ range .Site.Taxonomies.author.Alphabetical }}
+        <div class="tag">
+            <a href="{{ "author/" | relURL }}{{ .Name | urlize }}">{{ .Name }} ({{ .Count }})</a>
+        </div>
+    {{ end }}
+    </div>
+    <p class="subtitle">Tags</p>
+    <div class="tags are-medium">
+        {{ range .Site.Taxonomies.tags.Alphabetical }}
+            <span class="tag">
+                <a href="{{ "tags/" | relURL }}{{ .Name | urlize }}">{{ .Name }} ({{ .Count }})</a>
+            </span>
+        {{ end }}
+        </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7398757278741889" crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:800px"
+     data-ad-client="ca-pub-7398757278741889"
+     data-ad-slot="7456114770"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
