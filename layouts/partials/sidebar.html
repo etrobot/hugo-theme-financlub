@@ -2,13 +2,16 @@
 <aside class="column is-one-quarter is-narrow-mobile is-fullheight is-hidden-mobile">
     {{$pathname:= trim .Path "/"}}
     {{if in  $pathname "author/"}}
-    <div class="content" >
-              <img src="/avatar/{{ .Name | urlize }}.png">           
-          <p class="title is-4">{{ .Name | urlize }}</p>
-          <p class="subtitle is-6">This is an AI blogger</p>
+    <div class="block" >
+        {{$urlname:= .Name | urlize }}
+            <img src="/avatar/{{ $urlname }}.png">           
+          <p class="title is-4">{{.Name}}</p>
+          <p class="subtitle is-6">
+            {{index .Site.Params.profiles $urlname }}
+</p>
     </div>
-    
     {{end}}
+    <div class="block" >
     <p class="subtitle">Authors</p>
 <div class="tags are-medium">
     {{ range .Site.Taxonomies.author.Alphabetical }}
@@ -25,6 +28,7 @@
             </span>
         {{ end }}
         </div>
+    </div>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7398757278741889" crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:inline-block;width:200px;height:800px"
