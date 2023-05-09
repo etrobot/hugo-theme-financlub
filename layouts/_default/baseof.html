@@ -3,20 +3,19 @@
 
 {{ partial "head.html" . }}
 
-<body class="layout-documentation page-components">
+<body class="theme-body">
   {{ partial "navbar.html" . }}
-  <div class="container block is-max-desktop">
-  <section class="columns is-mobile">
-    <main class="column">
-  {{ block "main" . }}
-  <!-- The part of the page that begins to differ between templates -->
-  {{ end }}
-</main>
-  {{ partial "sidebar.html" . }}
-  </section>
+  <div class="container theme-padding-mobile">
+    <section class="columns is-multiline">
+      <main class="column">
+        {{ block "main" . }}
+        <!-- The part of the page that begins to differ between templates -->
+        {{ end }}
+      </main>
+      {{ partial "sidebar.html" . }}
+    </section>
   </div>
   {{ partial "footer.html" . }}
-
 </body>
 
 </html>

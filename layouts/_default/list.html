@@ -1,5 +1,5 @@
 {{ define "main" }}
-    <div class="grid-container">
+    <div class="columns is-multiline is-full-mobile is-fullheight">
       {{ range (.Paginate .Pages).Pages }}
         {{ .Render "summary" }}
         {{ end }}
