@@ -1,5 +1,5 @@
 
-<aside class="column is-one-quarter is-narrow-mobile is-fullheight is-hidden-mobile">
+<aside class="column is-one-quarter is-full-mobile">
     {{$pathname:= trim .Path "/"}}
     {{if in  $pathname "author/"}}
     <div class="block" >
@@ -29,11 +29,11 @@
         {{ end }}
         </div>
     </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7398757278741889" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-{{.Site.Params.adsensePubId}}" crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:inline-block;width:200px;height:800px"
-     data-ad-client="ca-pub-7398757278741889"
-     data-ad-slot="7456114770"></ins>
+     data-ad-client="ca-pub-{{.Site.Params.adsensePubId}}"
+     data-ad-slot="{{.Site.Params.adsenseUnitId}}"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
