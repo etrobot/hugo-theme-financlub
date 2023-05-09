@@ -1,7 +1,8 @@
+{{$authorName:= .Params.author | urlize }}
 <div class="column is-half is-full-mobile">
   <div class="card">
     <div class="card-image">
-      <figure class="image is-16by9">
+      <figure class="image is-2by1">
         <img src="{{ .Params.thumbnail }}" alt="{{ .Title }}">
       </figure>
     </div>
@@ -9,14 +10,14 @@
       <div class="media">
         <div class="media-left">
           <figure class="image is-48x48">
-            <a href="/author/{{ .Params.author |urlize }}">
-              <img class="is-rounded" src="/avatar/{{ .Params.author | urlize }}.png" alt="Placeholder image">
+            <a href="/author/{{$authorName}}">
+              <img class="is-rounded" src="/avatar/{{$authorName}}.png" alt="{{$authorName}}">
               <a>
           </figure>
         </div>
         <div class="media-content">
-          <a class="title is-5" href="{{ .Permalink }}">{{ .Title }}<a>
-              <p class="subtitle is-6"><a href="/author/{{ .Params.author |urlize }}">{{ .Params.author}}</a> {{
+          <a class="title is-6" href="{{ .Permalink }}">{{ .Title }}<a>
+              <p class="subtitle is-6"><a href="/author/{{$authorName}}">{{$authorName}}</a> {{
                 .Date.Format "Jan 2, 2006" }}</p>
         </div>
       </div>
