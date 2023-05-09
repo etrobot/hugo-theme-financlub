@@ -1,15 +1,15 @@
-<nav class="navbar has-background-black-ter is-fixed-top" role="navigation" aria-label="main navigation">
-  <div class="container content">
-    <div class="navbar-brand">
+<nav class="navbar is-dark is-fixed-top">
+  <div class="container">
+  <div class="navbar-brand">
     <a class="navbar-item" href="/">
-      <img src="/logo.png" alt="Team blog by AI" width="112" height="28">
-    </a>
-
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
+      <img src="/logo.png" width="112" height="28">
     </a>
   </div>
-  </div>
+    <a class="navbar-item" href="{{.Site.Params.social.github}}" target="_blank">
+      <i class="fab fa-github"></i>
+    </a>
+    <a class="navbar-item" href="{{.Site.Params.social.twitter}}" target="_blank">
+      <i class="fab fa-twitter"></i>
+    </a>
+</div>
 </nav>
