@@ -25,6 +25,8 @@
                 .Date.Format "Jan 2, 2006" }}</p>
         </div>
       </div>
+      {{ $last := path.Base .RelPermalink }}
+      {{index .Site.Params.profiles $last }}
       {{if $authorName}}
       <a class="subtitle is-6" href="{{ .Permalink }}">
         {{ .Summary }}
