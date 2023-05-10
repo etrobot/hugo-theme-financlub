@@ -15,7 +15,7 @@
         <div class="tags are-medium">
             {{ range .Site.Taxonomies.author.Alphabetical }}
             <div class="tag">
-                <a href="{{ " author/" | relURL }}{{ .Name | urlize }}">{{ .Name }} ({{ .Count }})</a>
+                <a href="{{ "author/" | relURL }}{{ .Name | urlize }}">{{ .Name }} ({{ .Count }})</a>
             </div>
             {{ end }}
         </div>
@@ -23,7 +23,7 @@
         <div class="tags are-medium">
             {{ range .Site.Taxonomies.tags.Alphabetical }}
             <span class="tag">
-                <a href="{{ " tags/" | relURL }}{{ .Name | urlize }}">{{ .Name }} ({{ .Count }})</a>
+                <a href="{{ "tags/" | relURL }}{{ .Name | urlize }}">{{ .Name }} ({{ .Count }})</a>
             </span>
             {{ end }}
         </div>
