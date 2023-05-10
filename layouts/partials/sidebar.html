@@ -1,40 +1,37 @@
-
 <aside class="column is-one-quarter is-full-mobile">
     {{$pathname:= trim .Path "/"}}
-    {{if in  $pathname "author/"}}
-    <div class="block" >
+    {{if in $pathname "author/"}}
+    <div class="block">
         {{$urlname:= .Name | urlize }}
-            <img src="/avatar/{{ $urlname }}.png">           
-          <p class="title is-4">{{.Name}}</p>
-          <p class="subtitle is-6">
+        <img src="/avatar/{{ $urlname }}.png">
+        <p class="title is-4">{{.Name}}</p>
+        <p class="subtitle is-6">
             {{index .Site.Params.profiles $urlname }}
-</p>
+        </p>
     </div>
     {{end}}
-    <div class="block" >
-    <p class="subtitle is-5">Authors</p>
-<div class="tags are-medium">
-    {{ range .Site.Taxonomies.author.Alphabetical }}
-        <div class="tag">
-            <a href="{{ "author/" | relURL }}{{ .Name | urlize }}">{{ .Name }} ({{ .Count }})</a>
+    <div class="block">
+        <p class="subtitle is-5">Authors</p>
+        <div class="tags are-medium">
+            {{ range .Site.Taxonomies.author.Alphabetical }}
+            <div class="tag">
+                <a href="{{ " author/" | relURL }}{{ .Name | urlize }}">{{ .Name }} ({{ .Count }})</a>
+            </div>
+            {{ end }}
         </div>
-    {{ end }}
-    </div>
-    <p class="subtitle is-5">Tags</p>
-    <div class="tags are-medium">
-        {{ range .Site.Taxonomies.tags.Alphabetical }}
+        <p class="subtitle is-5">Tags</p>
+        <div class="tags are-medium">
+            {{ range .Site.Taxonomies.tags.Alphabetical }}
             <span class="tag">
-                <a href="{{ "tags/" | relURL }}{{ .Name | urlize }}">{{ .Name }} ({{ .Count }})</a>
+                <a href="{{ " tags/" | relURL }}{{ .Name | urlize }}">{{ .Name }} ({{ .Count }})</a>
             </span>
-        {{ end }}
+            {{ end }}
         </div>
     </div>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-{{.Site.Params.adsensePubId}}" crossorigin="anonymous"></script>
-<ins class="adsbygoogle"
-     style="display:inline-block;width:200px;height:800px"
-     data-ad-client="ca-pub-{{.Site.Params.adsensePubId}}"
-     data-ad-slot="{{.Site.Params.adsenseUnitId}}"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+    <!-- toufu -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-{{.Site.Params.adsensePubId}}"
+        data-ad-slot="{{.Site.Params.adsenseUnitId}}" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 </aside>
