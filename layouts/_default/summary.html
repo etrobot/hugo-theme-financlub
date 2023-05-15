@@ -21,8 +21,7 @@
         {{end}}
         <div class="media-content">
           <a class="title is-6" href="{{ .Permalink }}">{{ .Title }}<a>
-              <p class="subtitle is-6"><a href="/author/{{$authorName}}">{{.Params.author}}</a> {{
-                .Date.Format "Jan 2, 2006" }}</p>
+          <p class="subtitle is-6"><a href="/author/{{$authorName}}">{{.Params.author}}</a> {{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}</p>
         </div>
       </div>
       {{ $last := path.Base .RelPermalink }}
