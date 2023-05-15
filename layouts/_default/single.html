@@ -1,23 +1,37 @@
 {{ define "main" }}
 <div class="block">
   <h1 class="title">{{ .Title }}</h1>
-    <h3 class="subtitle">
-      <p class="subtitle is-6"><a href="/author/{{ .Params.author |urlize }}">{{ .Params.author}}</a> {{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02 15:04") }}</p>
-    </h3>
-    <div class="tags are-small">
-             {{ range .Params.tags }}
-      <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}" class="tag subtitle is-7">{{ . }}</a>
-    {{ end }}
-        </div>
+  <div class="block">
+    <div class="media">
+      {{$authorName:= .Params.author | urlize }}
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <a href="/author/{{$authorName}}">
+            <img class="is-rounded" src="/avatar/{{$authorName}}.jpg" alt="{{$authorName}}">
+            <a>
+        </figure>
+      </div>
+      <div class="media-content">
+        <a class="title is-6" href="{{ .Permalink }}">{{ .Title }}<a>
+        <p class="subtitle is-6"><a href="/author/{{$authorName}}">{{.Params.author}}</a> {{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}</p>
+      </div>
+    </div>
+  </div>
     <article class="content">
       {{ .Content }}
     </article>
+    <p class="subtitle is-6">Tags:</p>
+    <div class="tags are-small">
+      {{ range .Params.tags }}
+        <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}" class="tag subtitle is-7">{{ . }}</a>
+      {{ end }}
+      </div>
     <div class="block">
         {{ with .PrevInSection }}
-        <span class="subtitle is-6 m-1">Previous Post: <a class="link" href="{{ .Permalink }}">{{.Title}}</a></span>
+        <p class="subtitle is-6 m-1">Previous Post: <a class="link" href="{{ .Permalink }}">{{.Title}}</a></p>
         {{ end }}
         {{ with .NextInSection }}
-        <span class="subtitle is-6 m-1">Next Post: <a class="link" href="{{ .Permalink }}">{{.Title}}</a></span>
+        <p class="subtitle is-6 m-1">Next Post: <a class="link" href="{{ .Permalink }}">{{.Title}}</a></p>
         {{ end }}
     </div>
 </div>
