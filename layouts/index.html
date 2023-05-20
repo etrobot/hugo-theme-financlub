@@ -6,9 +6,9 @@
     {{ end }}
     </div>
 {{ if $paginator.HasPrev }}
-  <a href="{{ $paginator.Prev.URL }}">Previous</a>
-{{ end }}
+  <a href="{{ $paginator.Prev.URL }}">«Previous </a>
+{{ end }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 {{ if $paginator.HasNext }}
-  <a href="{{ $paginator.Next.URL }}">Next</a>
+  <a href="{{ $paginator.Next.URL }}"> Next»</a>
 {{ end }}
 {{ end }}

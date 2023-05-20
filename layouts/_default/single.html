@@ -1,6 +1,5 @@
 {{ define "main" }}
 <div class="block">
-  <h1 class="title">{{ .Title }}</h1>
   <div class="block">
     <div class="media">
       {{$authorName:= .Params.author | urlize }}
@@ -12,7 +11,7 @@
         </figure>
       </div>
       <div class="media-content">
-        <a class="title is-6" href="{{ .Permalink }}">{{ .Title }}<a>
+        <a class="title" href="{{ .Permalink }}">{{ .Title }}<a>
         <p class="subtitle is-6"><a href="/author/{{$authorName}}">{{.Params.author}}</a> {{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}</p>
       </div>
     </div>
