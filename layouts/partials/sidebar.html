@@ -1,4 +1,4 @@
-<aside class="column is-one-quarter is-full-mobile">
+<aside class="column is-one-fifth is-full-mobile">
     {{$pathname:= trim .Path "/"}}
     {{if in $pathname "author/"}}
     <div class="block">
@@ -23,9 +23,11 @@
         <div class="block"><a class="subtitle is-6" href="/tags">Tags</a></div>
         <div class="tags are-medium">
             {{ range .Site.Taxonomies.tags.Alphabetical }}
-            <span class="tag">
-                <a href="{{ "tags/" | relURL }}{{ .Name | urlize }}">{{ .Name }} ({{ .Count }})</a>
-            </span>
+            {{ if gt .Count 1 }}
+                <span class="tag">
+                    <a href="{{ "tags/" | relURL }}{{ .Name | urlize }}">{{ .Name }} ({{ .Count }})</a>
+                </span>
+            {{ end }}
             {{ end }}
         </div>
     </div>
