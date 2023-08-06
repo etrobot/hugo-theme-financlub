@@ -1,7 +1,7 @@
 {{ define "main" }}
     <div class="tags">
       {{ $paginator := .Paginate (where .Data.Pages "Type" "!=" "taxonomyTerm") 200 }}
-      {{ range (.Paginate .Pages).Pages }}   
+      {{ range .Site.RegularPages.ByTitle.Reverse }}   
         <a href="{{ .Permalink }}" class="tag">{{ .Title }}</a>
       {{ end }}
     </div>
