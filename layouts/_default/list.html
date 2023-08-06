@@ -1,8 +1,9 @@
 {{ define "main" }}
-    <div class="columns is-multiline is-full-mobile is-fullheight">
-      {{ range (.Paginate .Pages).Pages }}
-        {{ .Render "summary" }}
-        {{ end }}
+    <div class="tags">
+      {{ $paginator := .Paginate (where .Data.Pages "Type" "!=" "taxonomyTerm") 200 }}
+      {{ range (.Paginate .Pages).Pages }}   
+        <a href="{{ .Permalink }}" class="tag">{{ .Title }}</a>
+      {{ end }}
     </div>
     {{ template "_internal/pagination.html" . }}
 {{ end }}
