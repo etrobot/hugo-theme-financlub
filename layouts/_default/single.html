@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div class="block">
-  <h1 class="title">{{ .Title }} {{.Params.Subtitle }}</h1> 
+  <h1 class="title">{{ .Title }} <span class="subtitle is-4" > {{.Params.Subtitle }}</span></h1> 
     <h3 class="subtitle">
       <p class="subtitle is-6"><a href="/author/{{ .Params.author |urlize }}">{{ .Params.author}}</a> {{ .Date.Format "Jan 2, 2006" }}</p>
     </h3>
